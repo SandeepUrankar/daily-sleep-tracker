@@ -12,9 +12,7 @@ const Home = () => {
 
                 <div className='add-btn'>
                    <div> <Button variant="contained" className="new-btn" startIcon={<AddIcon fontSize="large" />} sx={{
-                    backgroundColor:'#5795FA',
-    borderRadius: 50
-  }}>New Entry</Button></div>
+                    backgroundColor:'#5795FA', borderRadius: 50 }}>New Entry</Button></div>
                 </div>
             </div>
         </div>
