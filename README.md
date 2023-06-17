@@ -1,2 +1,15 @@
-# daily-sleep-tracker
-Need help with your sleeping patterns? Our web app has got you covered! Keep track of your sleep duration and timings with ease. You can easily add, edit, or remove any sleep entry to monitor your progress.
+# Daily Sleep Tracker 💤
+A MEAN-based web application designed for the purpose of monitoring a user's sleep patterns. 🔍 
+
+### Image Reference ⤵️
+![image](https://github.com/SandeepUrankar/daily-sleep-tracker/assets/66010653/392d0efc-29e2-4316-874e-ed5405035a5d)
+
+### TODOs 📋 
+- [ ] UIDevelop the user interface (UI) 🎨
+- [ ] Create APIs for persistent storage of user management data 🗄️
+- [ ] Implement User Authentication 🔒
+- [ ] Explore and add many more... 🔄
+
+### Feedbacks 📣
+- We welcome your feedback and suggestions for improvement. 🙏
+- Please feel free to create an [issue](https://github.com/SandeepUrankar/daily-sleep-tracker/issues/new) or open a pull request (PR). 💡
