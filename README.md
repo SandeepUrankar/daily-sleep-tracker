@@ -5,7 +5,7 @@ A MEAN-based web application designed for the purpose of monitoring a user's sle
 ![image](https://github.com/SandeepUrankar/daily-sleep-tracker/assets/66010653/392d0efc-29e2-4316-874e-ed5405035a5d)
 
 ### TODOs 📋 
-- [ ] UIDevelop the user interface (UI) 🎨
+- [ ] Develop the user interface (UI) 🎨
 - [ ] Create APIs for persistent storage of user management data 🗄️
 - [ ] Implement User Authentication 🔒
 - [ ] Explore and add many more... 🔄
