@@ -135,6 +135,7 @@ const handleTimeChange2 = (newValue) => {
       <DemoContainer components={['DatePicker']}>
         <DatePicker label="Select Date"  
         value={selectedDate}
+        renderInput={(params)=><TextField{...params}/>}
         onChange={(date) => {
           const dateString = new Date(date).toLocaleDateString()
           console.log(dateString)
@@ -147,6 +148,8 @@ const handleTimeChange2 = (newValue) => {
     <LocalizationProvider dateAdapter={AdapterDayjs} >
       <DemoContainer components={['TimePicker']}  >
         <TimePicker label="Sleep time"  value={selectedTime1}
+         renderInput={(params)=><TextField{...params}/>}
+         ampm={false}
         onChange={(newValue) => {
           handleTimeChange1(newValue);
         }}
@@ -159,6 +162,7 @@ const handleTimeChange2 = (newValue) => {
         <TimePicker label="Wake up time"
          renderInput={(params)=><TextField{...params}/>}
          value={selectedTime2}
+         ampm={false}
         onChange={(newValue) => {
           handleTimeChange2(newValue);
         }}
