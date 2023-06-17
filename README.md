@@ -13,3 +13,9 @@ A MEAN-based web application designed for the purpose of monitoring a user's sle
 ### Feedbacks 📣
 - We welcome your feedback and suggestions for improvement. 🙏
 - Please feel free to create an [issue](https://github.com/SandeepUrankar/daily-sleep-tracker/issues/new) or open a pull request (PR). 💡
+
+### Thanks to all Contributors 💪
+
+Thanks a lot for contributing to this project.🔥
+
+[![Contributors](https://contrib.rocks/image?repo=SandeepUrankar/daily-sleep-tracker)](https://github.com/SandeepUrankar/daily-sleep-tracker/graphs/contributors)
