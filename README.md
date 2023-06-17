@@ -1,5 +1,5 @@
 # Daily Sleep Tracker 💤
-A MEAN-based web application designed for the purpose of monitoring a user's sleep patterns. 🔍 
+A MERN-based web application designed for the purpose of monitoring a user's sleep patterns. 🔍 
 
 ### UI Design ⤵️
 ![image](https://github.com/SandeepUrankar/daily-sleep-tracker/assets/66010653/392d0efc-29e2-4316-874e-ed5405035a5d)
