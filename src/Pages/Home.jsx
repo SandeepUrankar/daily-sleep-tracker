@@ -3,9 +3,7 @@ import "./Home.css";
 import Button from "@mui/material/Button";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import AddIcon from "@mui/icons-material/Add";
-
 import {TextField} from '@mui/material'
-
 
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
@@ -16,7 +14,6 @@ import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 // import { AdapterDateFns } from '@mui/lab/AdapterDateFns';
@@ -24,6 +21,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 // import {makeStyles} from "@material-ui/core/styles";
+
+import dayjs from 'dayjs'
 
     const BootstrapDialog = styled(Dialog)(({ theme }) => ({
         '& .MuiDialogContent-root': {
@@ -79,29 +78,24 @@ const Home = () => {
   const modal={
     width:"100vw"
   }
-  // const time1={
-  //   border:'2px solid black',
-  //   borderRadius:'15px'
-  // }
 
-
-
-  
-
- 
 const [selectedDate, setSelectedDate] = useState(null)
-console.log(selectedDate)
-
+console.log({selectedDate})
 
 const [selectedTime1, setSelectedTime1] = useState(null)
-// console.log(selectedTime1.toLocaleTimeString('en-US'))
 console.log({selectedTime1})
-// console.log({selectedTime1:selectedTime1 && selectedTime1.toLocaleTimeString()})
-// console.log({M2.$d:selectedTime1 && selectedTime1.toLocaleTimeString()})
-
 const [selectedTime2, setSelectedTime2] = useState(null)
-// console.log(selectedTime2)
+console.log({selectedTime2})
 
+const handleTimeChange1 = (newValue) => {
+  const selectedTime = dayjs(newValue).format('HH:mm:A');
+  setSelectedTime1(selectedTime);
+};
+
+const handleTimeChange2 = (newValue) => {
+  const selectedTime = dayjs(newValue).format('HH:mm:A');
+  setSelectedTime2(selectedTime);
+};
   return (
     <>
       <div className="main">
@@ -130,7 +124,7 @@ const [selectedTime2, setSelectedTime2] = useState(null)
         open={open}
       >
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-         <strong> Fill Time Details</strong>
+        <strong> Fill Time Details</strong>
         </BootstrapDialogTitle>
         <DialogContent dividers>
           
@@ -141,7 +135,11 @@ const [selectedTime2, setSelectedTime2] = useState(null)
       <DemoContainer components={['DatePicker']}>
         <DatePicker label="Select Date"  
         value={selectedDate}
-        onChange={(newValue)=>{setSelectedDate(newValue)}}
+        onChange={(date) => {
+          const dateString = new Date(date).toLocaleDateString()
+          console.log(dateString)
+          setSelectedDate(dateString);
+        }}
         />
       </DemoContainer>
     </LocalizationProvider>
@@ -149,7 +147,10 @@ const [selectedTime2, setSelectedTime2] = useState(null)
     <LocalizationProvider dateAdapter={AdapterDayjs} >
       <DemoContainer components={['TimePicker']}  >
         <TimePicker label="Sleep time"  value={selectedTime1}
-        onChange={(newValue)=>{setSelectedTime1(newValue)}} />
+        onChange={(newValue) => {
+          handleTimeChange1(newValue);
+        }}
+        />
       </DemoContainer>
     </LocalizationProvider>
 
@@ -158,24 +159,24 @@ const [selectedTime2, setSelectedTime2] = useState(null)
         <TimePicker label="Wake up time"
          renderInput={(params)=><TextField{...params}/>}
          value={selectedTime2}
-        onChange={newValue=>setSelectedTime2(newValue)} />
+        onChange={(newValue) => {
+          handleTimeChange2(newValue);
+        }}
+         />
       </DemoContainer>
     </LocalizationProvider>
         </DialogContent>
         <DialogActions>
           <Button variant="contained"  sx={{
                   backgroundColor: "#5795FA",
-                  borderRadius: 50,
+                  borderRadius: 5,
                   fontFamily: "Inter, sans-serif",
                 }}  autoFocus onClick={handleClose}>
             Save
           </Button>
         </DialogActions>
       </BootstrapDialog>
-
-              
             </div>
-            
           </div>
         </div>
       </div>
