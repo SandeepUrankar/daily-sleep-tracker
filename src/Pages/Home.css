@@ -3,14 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 *{
     box-sizing: border-box;
-    /* margin: 0; */
+    margin: 0;
 }
 
 
 .main{
     background-color: #EDF4FE;
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -18,7 +18,6 @@
 }
 
 .container{
-    
     display: flex;
     flex-direction: column;
     background-color: #FFFFFF;
@@ -28,6 +27,7 @@
     height: 70vh;
     backdrop-filter: blur(4px);
     border-radius: 40px;
+    padding-top: 20px;
     font-family: 'Inter', sans-serif;
 }
 
@@ -37,13 +37,15 @@
     font-size: 1.8rem;
     letter-spacing: 0.045em;
     font-weight: bolder;
+    /* text-transform: capitalize; */
 }
 
 .add-btn{
+    padding-top: 20px;
     display: flex;
     justify-content: center;
 }
-Button{
+.new-btn1{
     border-radius: 15px;
     width: 100%;
     height: 100%;
@@ -53,3 +55,8 @@ Button{
 /* .css-sghohy-MuiButtonBase-root-MuiButton-root{
     background-color: #5795FA;
 } */
+
+.date1{
+    /* border: 2px solid burlywood; */
+    border-radius: 30px;
+}
