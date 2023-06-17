@@ -4,6 +4,7 @@
 *{
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Inter', sans-serif;
 }
 
 
@@ -59,4 +60,17 @@
 .date1{
     /* border: 2px solid burlywood; */
     border-radius: 30px;
+}
+
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid brown; */
+    border-radius: 10%;
+}
+
+
+#customized-dialog-title{
+    letter-spacing: 2px;
 }
