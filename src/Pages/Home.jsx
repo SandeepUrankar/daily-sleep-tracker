@@ -21,6 +21,8 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 // import {makeStyles} from "@material-ui/core/styles";
+import { AreaChart, Area, LineChart, Line,Label, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
 
 import dayjs from "dayjs";
 
@@ -61,6 +63,58 @@ BootstrapDialogTitle.propTypes = {
   children: PropTypes.node,
   onClose: PropTypes.func.isRequired,
 };
+
+
+
+
+
+
+const data = [
+  {
+    name: 'Page A',
+    uv: "40",
+    // pv: 24,
+    amt: "94",
+  },
+  {
+    name: 'Page B',
+    uv: "30",
+    // pv: 13,
+    amt: "25",
+  },
+  {
+    name: 'Page C',
+    uv: "35",
+    // pv: 98,
+    amt: "45",
+  },
+  {
+    name: 'Page D',
+    uv: "31",
+    // pv: 39,
+    amt: "20",
+  },
+  {
+    name: 'Page E',
+    uv: "05",
+    // pv: 48,
+    amt: "51",
+  },
+  {
+    name: 'Page F',
+    uv: "23",
+    // pv: 38,
+    amt: "60",
+  },
+  {
+    name: 'Page G',
+    uv: 10,
+    // pv: 43,
+    amt: 21,
+  },
+];
+
+
 
 const Home = () => {
   const [open, setOpen] = React.useState(false);
@@ -184,6 +238,45 @@ const Home = () => {
                   </Button>
                 </DialogActions>
               </BootstrapDialog>
+            </div>
+          </div>
+
+          <div className="statistics">
+            <div className="duration">
+              <div className="duration-title">
+                <p className="sleep-title">Sleep Duration</p>
+              </div>
+              <div className="duration-graph">
+
+              <AreaChart
+          width={320}
+          height={300}
+          data={data}
+          margin={{
+            top: 5,
+            right: 0,
+            left: 0,
+            bottom: 5,
+          }}
+        >
+          <XAxis dataKey="amt" />
+
+<YAxis dataKey="uv"/>
+{/* <Tooltip /> */}
+          <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#ccdbef" />
+        </AreaChart>
+        
+
+              </div>
+            </div>
+
+            <div className="stats">
+              <div className="stats-title">
+                <p className="sleep-title">Sleep Stats</p>
+              </div>
+              <div className="stats-table">
+
+              </div>
             </div>
           </div>
         </div>
