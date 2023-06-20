@@ -269,7 +269,7 @@ const Home = () => {
                     tickLine={false}
                   />
 
-                  <YAxis dataKey="uv" axisLine={false} tickLine={false}  /> 
+                  <YAxis dataKey="uv" axisLine={false} tickLine={false} />
                   {/* domain={[0, 50]} */}
                   {/* <Tooltip /> */}
                   {/* <Brush dataKey="date" data={data} /> */}
@@ -287,7 +287,67 @@ const Home = () => {
               <div className="stats-title">
                 <p className="sleep-title">Sleep Stats</p>
               </div>
-              <div className="stats-table"></div>
+              {/* <div className="stats-table"> */}
+                <div className="container-table">
+                <table className="main-table">
+                  <thead>
+                    <tr>
+                      <th> </th>
+                      <th>Time of sleep</th>
+                      <th>Wake up time</th>
+                      <th>Sleep duration</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>5/1</td>
+                      <td>00:00</td>
+                      <td>5:00</td>
+                      <td>5Hrs</td>
+                    </tr>
+                    <tr>
+                    <td>5/1</td>
+                      <td>00:00</td>
+                      <td>5:00</td>
+                      <td>5Hrs</td>
+                    </tr>
+                    <tr>
+                    <td>5/1</td>
+                      <td>00:00</td>
+                      <td>5:00</td>
+                      <td>5Hrs</td>
+                    </tr>
+
+                    <tr>
+                    <td>5/1</td>
+                      <td>00:00</td>
+                      <td>5:00</td>
+                      <td>5Hrs</td>
+                    </tr>
+
+                    <tr>
+                    <td>5/1</td>
+                      <td>00:00</td>
+                      <td>5:00</td>
+                      <td>5Hrs</td>
+                    </tr>
+
+                    <tr>
+                    <td>5/1</td>
+                      <td>00:00</td>
+                      <td>5:00</td>
+                      <td>5Hrs</td>
+                    </tr>
+                    <tr>
+                    <td>5/1</td>
+                      <td>00:00</td>
+                      <td>5:00</td>
+                      <td>5Hrs</td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+              {/* </div> */}
             </div>
           </div>
         </div>
