@@ -31,3 +31,16 @@
       /> */}
       <Line type="monotone" dataKey="uv" stroke="#82ca9d" fill="#82ca9d" dot={false} />
     </LineChart>
+
+
+
+
+    
+  th:not(:nth-child(1)),
+td:not(:nth-child(1)) {
+  /* border-radius: 10px; */
+  /* background-color: #f0f0f0; */
+  background-color: #e0e9f5;
+  border-collapse: collapse;
+  /* border-radius: 15px; */
+}
