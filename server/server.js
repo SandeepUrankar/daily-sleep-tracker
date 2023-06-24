@@ -1,25 +1,24 @@
-require("dotenv").config();
-const mongoose = require('mongoose');
+require("dotenv").config({ path: "../.env" });
 const express = require("express");
 const app = express();
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 
-const timings = require('./routes/timings')
+const timings = require("./routes/timings");
+const users = require("./routes/users");
+const auth = require("./routes/auth");
 const PORT = process.env.PORT || 7000;
-
-
-app.use(bodyParser.json()); 
+const { connectDB } = require("./db/db");
+app.use(bodyParser.json());
 app.use(express.json());
 
-app.use('/api/v1/timings/',timings)
+connectDB();
+
+app.use("/api/v1/timings/", timings);
+app.use("/api/v1/users/", users);
+app.use("/api/v1/auth/", auth);
+
 app.get("/", (req, res) => {
   res.send(JSON.stringify({ message: "Hello World" }));
 });
 
-mongoose.connect('mongodb://localhost:27017/timings')
-        .then(()=> console.log('Connected to MongoDB'))
-        .catch((err)=> console.error(err))
-
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-
