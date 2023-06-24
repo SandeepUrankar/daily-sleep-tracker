@@ -23,7 +23,13 @@ const timing = mongoose.model('Timings', timingSchema);
 
 router.get('/', async (req, res) => {
   const username = req.body.username
-  const result = await timing.find({ Username: username });
+  const result = await timing.aggregate([
+    { $match: { Username: username } },
+    { $unwind: "$timings" },
+    { $sort: { "timings.date": -1 } },
+    { $group: { _id: "$_id", timings: { $push: "$timings" } } },
+    { $project: { timings: { $slice: ["$timings", 7] } } }
+  ]);
   res.send(result);
 })
 
