@@ -15,7 +15,6 @@ function App() {
 
   return (
     <>
-<<<<<<< HEAD
       {/* <BrowserRouter> */}
       
         <Routes>
@@ -24,11 +23,11 @@ function App() {
           <Route path="/signup" element={<Signup/>}></Route>
       </Routes>
       {/* </BrowserRouter> */}
-=======
+
     
       <Home/>
    
->>>>>>> main
+
     </>
   )
 }

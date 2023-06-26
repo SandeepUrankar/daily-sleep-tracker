@@ -138,7 +138,7 @@ const Home = () => {
     width: "100vw",
   };
 
-  const [selectedDate, setSelectedDate] = useState(new moment());
+  const [selectedDate, setSelectedDate] = useState();
   console.log({selectedDate});
 
   const [selectedTime1, setSelectedTime1] = useState(null);

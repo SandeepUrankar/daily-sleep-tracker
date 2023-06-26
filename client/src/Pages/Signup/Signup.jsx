@@ -26,7 +26,7 @@ const Signup = () => {
     const handleSubmit=async(event)=>{
         event.preventDefault();
 
-        const result = await axios.post('https://dst-server.onrender.com/api/v1/users',{username:setData.username,email:setData.email,password:setData.password})
+        const result = await axios.post('https://dst-server.onrender.com/api/v1/users',{setData})
         .then(res=>{
             console.log("Success===>",res)
         })
