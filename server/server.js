@@ -8,6 +8,10 @@ const users = require("./routes/users");
 const auth = require("./routes/auth");
 const PORT = process.env.PORT || 7000;
 const { connectDB } = require("./db/db");
+var cors = require("cors");
+
+app.use(cors());
+
 app.use(bodyParser.json());
 app.use(express.json());
 
