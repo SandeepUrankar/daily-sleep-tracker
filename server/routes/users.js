@@ -17,7 +17,14 @@ router.post("/", async (req, res) => {
       .send(`Username "${req.body.username}" already used, try other.`);
   }
 
-  const salt = await bcrypt.genSalt(10);
+  // const salt = await bcrypt.genSalt(10);
+  const salt = await bcrypt.genSalt(10, (err, salt) => {
+    if (err) throw err;
+    hash(body.pass, salt, (err, hash) => {
+      if (err) throw err;
+      body.pass = hash;
+    })
+  });
   user = User({
     username: req.body.username,
     email: req.body.email,
