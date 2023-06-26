@@ -9,7 +9,9 @@ const Signin = () => {
     password: "",
   });
 
-  console.log(setUser);
+  console.log({setUser});
+  // console.log(setUser.username);
+  // console.log(setUser.password);
 
   const setData = (event) => {
     const name = event.target.name;
@@ -26,16 +28,16 @@ const Signin = () => {
 
   const handleSubmit = async(event)=>{
 	event.preventDefault();
-	const headers = {
-        'Content-Type': 'text/plain'
-    };
+	// const headers = {
+  //       'Content-Type': 'text/plain'
+  //   };
 
     const result = await axios.post(
         'https://dst-server.onrender.com/api/v1/auth',
 		{username:setUser.username,password:setUser.password},
-        {headers}
+        // {headers}
         ).then(response => {
-            console.log("Success==> ", response);
+            console.log("Success==> ", response.status);
         })
         .catch(error => {
             console.log("Error===>", error);
@@ -43,12 +45,7 @@ const Signin = () => {
     )
 
 
-	if(result)
-	{
-		console.log(result);
-	}else{
-		console.log("error");
-	}
+        // console.log("Result=====>" ,res.data)
   }
 
   

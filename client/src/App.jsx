@@ -25,7 +25,7 @@ function App() {
       {/* </BrowserRouter> */}
 
     
-      <Home/>
+      {/* <Home/> */}
    
 
     </>
