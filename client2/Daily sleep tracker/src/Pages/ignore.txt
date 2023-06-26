@@ -1,6 +1,0 @@
-onChange={(date) => {
-                          const dateString = new Date(
-                            date
-                          ).toLocaleDateString();
-                          console.log(dateString);
-                          setSelectedDate(dateString);
