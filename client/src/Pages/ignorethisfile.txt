@@ -44,3 +44,89 @@ td:not(:nth-child(1)) {
   border-collapse: collapse;
   /* border-radius: 15px; */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <BootstrapDialog
+                style={modal}
+                onClose={handleClose}
+                aria-labelledby="customized-dialog-title"
+                open={open}
+              >
+                <BootstrapDialogTitle
+                  id="customized-dialog-title"
+                  onClose={handleClose}
+                >
+                  <strong> Fill Your Details</strong>
+                </BootstrapDialogTitle>
+                <DialogContent dividers>
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    {/* <LocalizationProvider dateAdapter={AdapterDateFns}> */}
+                    <DemoContainer components={["DatePicker"]}>
+                      <DatePicker
+                        label="Select Date"
+                        value={selectedDate}
+                        dateFormat="YYYY/MM/dd"
+                        onChange={(date) => {
+                          const dateString = new Date(
+                            date
+                          ).toLocaleDateString('fr-CA'); // 'fr-CA is date Format which is YYYY-MM-DD
+                          console.log(dateString);
+                          setSelectedDate(dateString);
+                        }}
+                      />
+                    </DemoContainer>
+                  </LocalizationProvider>
+
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DemoContainer components={["TimePicker"]}>
+                      <TimePicker
+                        label="Sleep time"
+                        value={selectedTime1}
+                        onChange={(newValue) => {
+                          handleTimeChange1(newValue);
+                        }}
+                      />
+                    </DemoContainer>
+                  </LocalizationProvider>
+
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DemoContainer components={["TimePicker"]}>
+                      <TimePicker
+                        label="Wake up time"
+                        renderInput={(params) => <TextField {...params} />}
+                        value={selectedTime2}
+                        onChange={(newValue) => {
+                          handleTimeChange2(newValue);
+                        }}
+                      />
+                    </DemoContainer>
+                  </LocalizationProvider>
+                </DialogContent>
+                <DialogActions>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor: "#5795FA",
+                      borderRadius: 5,
+                      fontFamily: "Inter, sans-serif",
+                    }}
+                    autoFocus
+                    onClick={handleClose}
+                  >
+                    Save
+                  </Button>
+                </DialogActions>
+              </BootstrapDialog>

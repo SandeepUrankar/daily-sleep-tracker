@@ -9,6 +9,7 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+// import { AdapterMomentjs } from '@mui/x-date-pickers/AdapterMomentjs'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 // import { DesktopDatePicker} from '@mui/x-date-pickers/DesktopDatePicker';
 
@@ -39,7 +40,7 @@ import {
 } from "recharts";
 
 import dayjs from "dayjs";
-// import moment from "moment ";
+import moment from "moment"
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -138,7 +139,7 @@ const Home = () => {
     width: "100vw",
   };
 
-  const [selectedDate, setSelectedDate] = useState(new moment());
+  const [selectedDate, setSelectedDate] = useState(null);
   console.log({selectedDate});
 
   const [selectedTime1, setSelectedTime1] = useState(null);
@@ -203,8 +204,16 @@ const Home = () => {
                         label="Select Date"
                         value={selectedDate}
 
-                        onChange={(val)=>{
-                          setSelectedDate(val)                          
+                        onChange={(date)=>{
+                          // const dateString = moment(date);
+                          // console.log(dateString)
+                          // setSelectedDate(dateString)    
+                          const format1 = "YYYY-MM-DD";
+                          // const dateTime1 = moment(date).format(format1);
+                          console.log("hello")
+                          const fdate = dateTime1.toLocaleString();
+                          // console.log(dateTime1)
+                          setSelectedDate(fdate)  
                         }}
                         format="YYYY-MM-DD"
 
