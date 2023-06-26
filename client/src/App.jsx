@@ -9,11 +9,13 @@ import Signup from './Pages/Signup/Signup';
 
 import './App.css'
 
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+<<<<<<< HEAD
       {/* <BrowserRouter> */}
       
         <Routes>
@@ -22,6 +24,11 @@ function App() {
           <Route path="/signup" element={<Signup/>}></Route>
       </Routes>
       {/* </BrowserRouter> */}
+=======
+    
+      <Home/>
+   
+>>>>>>> main
     </>
   )
 }

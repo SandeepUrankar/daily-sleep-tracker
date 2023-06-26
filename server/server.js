@@ -9,7 +9,15 @@ const users = require("./routes/users");
 const auth = require("./routes/auth");
 const PORT = process.env.PORT || 7000;
 const { connectDB } = require("./db/db");
+<<<<<<< HEAD
 // app.use(bodyParser.json());
+=======
+var cors = require("cors");
+
+app.use(cors());
+
+app.use(bodyParser.json());
+>>>>>>> main
 app.use(express.json());
 
 const bodyparser = require("body-parser");
