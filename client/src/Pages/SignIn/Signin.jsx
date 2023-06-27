@@ -1,15 +1,18 @@
 import React from "react";
 import "./Signin.css";
-import { setDate } from "date-fns";
 import { useState } from "react";
 import axios from 'axios'
+import { useNavigate } from "react-router";
+
 const Signin = () => {
   const [setUser, setUserdata] = useState({
     username: "",
     password: "",
   });
 
-  console.log(setUser);
+  const navigate = useNavigate();
+
+  console.log({setUser});
 
   const setData = (event) => {
     const name = event.target.name;
@@ -26,29 +29,35 @@ const Signin = () => {
 
   const handleSubmit = async(event)=>{
 	event.preventDefault();
-	const headers = {
-        'Content-Type': 'text/plain'
-    };
 
+  if(setUser.username!="" && setUser.password!= "")
+  {
     const result = await axios.post(
         'https://dst-server.onrender.com/api/v1/auth',
 		{username:setUser.username,password:setUser.password},
-        {headers}
         ).then(response => {
-            console.log("Success==> ", response);
+            console.log("Success==> ", response.data.data);
+            if(response.data.status==="success")
+            {
+              localStorage.setItem("token", response.data.data)
+              alert("Logged In successfully")
+              navigate('/sleep-track');
+            }
         })
         .catch(error => {
-            console.log("Error===>", error);
-        }
-    )
+            console.log("Error===>", error.response.data.status);
+            if(error.response.data.status==="failed")
+            {
+              alert("Enter account details correctly!!")
+            }
+        })
+      }else{
+        alert("Please enter all fields correctly");
+        window.location.reload();
+      }
 
 
-	if(result)
-	{
-		console.log(result);
-	}else{
-		console.log("error");
-	}
+        // console.log("Result=====>" ,res.data)
   }
 
   

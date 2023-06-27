@@ -3,40 +3,59 @@ import './Signup.css'
 import { Link } from 'react-router-dom'
 
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+
 const Signup = () => {
+  const navigate = useNavigate()
+
     const [setData, setUserdata] = useState({
-        "username":"",
-        "email":"",
-        "password":""
-    })
+        username:"",
+        email:"",
+        password:""
+    });
 
-
-    console.log(setData);
+    console.log({setData});
 
     const setVal=(event)=>{
         const name= event.target.name;
         const value = event.target.value;
 
         setUserdata((prev)=>{
-            return {...prev, [name]:value};
+            return { ...prev, [name]: value };
         });
     }
-
-    const handleSubmit=async(event)=>{
+    // username:setData.username,password:setData.password,email:setData.email
+    const handleSubmit = async(event)=>{
         event.preventDefault();
 
-        const result = await axios.post('https://dst-server.onrender.com/api/v1/users',{setData})
-        .then(res=>{
-            console.log("Success===>",res)
-        })
-        .catch(error=>{
-            console.log("Error===>",error)
-        })
 
-
-        console.log("Result====>",result);
+        if(setData.username!= "" && setData.email!= "" && setData.password!= "")
+        {
+          const result = await axios.post(
+            'https://dst-server.onrender.com/api/v1/users',
+            {   username:setData.username,password:setData.password,email:setData.email},
+            ).then(response=>{
+                console.log("Success===>",response.data.status)
+                if(response.data.status === "success")
+                {
+                 console.log("Account successfully created!!", response.data.status)
+                  navigate('/')
+                } 
+            })
+            .catch(error=>{
+                console.log("Error===>",error.response.data.status)
+                if(error.response.data.status === "failed")
+                {
+                  alert("User is already exist")
+                } 
+            })
+        }else{
+          alert("Please enter all fields correctly");
+          window.location.reload()
+        }
     }
+
   return (
     <>
       <main className="signin-main">
