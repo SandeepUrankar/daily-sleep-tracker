@@ -60,7 +60,7 @@ const Signup = () => {
     <>
       <main className="signin-main">
         <div className="main-container">
-          <section className="wrapper">
+          <section style={{border:"2px solid #5795FA"}} className="wrapper">
             <div className="heading">
               <h1 className="text text-large">Create an account</h1>
               {/* <p className="text text-normal">New user? <span><a href="#" className="text text-links">Create an account</a></span> */}
@@ -80,6 +80,7 @@ const Signup = () => {
                   placeholder="Username"
                   value={setData.username}
                   onChange={setVal}
+                  required
                 />
               </div>
               <div className="input-control">
@@ -94,6 +95,7 @@ const Signup = () => {
                   placeholder="Email id"
                   value={setData.email}
                   onChange={setVal}
+                  required
                 />
               </div>
               <div className="input-control">
@@ -108,6 +110,7 @@ const Signup = () => {
                   placeholder="Password"
                   value={setData.password}
                   onChange={setVal}
+                  required
                 />
               </div>
               <div className="input-control">
@@ -115,15 +118,16 @@ const Signup = () => {
                 <input
                   type="submit"
                   name="submit"
-                  className="input-submit"
+                  className="input-submit2"
                   value="Sign Up"
                   onClick={handleSubmit}
+                  
                 />
               </div>
               <p style={{ textAlign: 'center' }}>
                 Already have an account?{' '}
                 <strong>
-                  <Link to="/signin">Sign In </Link>
+                  <Link to="/" style={{color:["#5795FA"]}}>Sign In </Link>
                 </strong>
               </p>
             </form>
