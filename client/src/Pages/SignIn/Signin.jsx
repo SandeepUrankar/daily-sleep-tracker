@@ -66,7 +66,7 @@ const Signin = () => {
     <>
       <main className="signin-main">
         <div className="main-container">
-          <section className="wrapper">
+          <section  style={{border:"2px solid #5795FA"}}className="wrapper">
             <div className="heading">
               <h1 className="text text-large">Sign In</h1>
               {/* <p className="text text-normal">New user? <span><a href="#" className="text text-links">Create an account</a></span> */}
@@ -86,6 +86,7 @@ const Signin = () => {
                   name="username"
                   value={setUser.username}
                   onChange={setData}
+                  required
                 />
               </div>
               <div className="input-control">
@@ -98,9 +99,9 @@ const Signin = () => {
                   id="password"
                   className="input-field"
                   placeholder="Password"
-                
                   value={setUser.password}
                   onChange={setData}
+                  required
                 />
               </div>
               <div className="input-control">
@@ -113,6 +114,7 @@ const Signin = () => {
                   className="input-submit"
                   value="Sign In"
                   onClick={handleSubmit}
+                  
                 />
               </div>
             </form>

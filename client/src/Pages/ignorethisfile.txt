@@ -48,7 +48,21 @@ td:not(:nth-child(1)) {
 
 
 
+ <DatePicker
+                        label="Select Date"
+                        value={selectedDate}
 
+                        onChange={(val)=>{
+                          setSelectedDate(val)                          
+                        }}
+                        format="YYYY-MM-DD"
+
+
+
+                        // renderInput={(params) => (
+                        //   <TextField {...params} inputProps={{ ...params.inputProps, pattern: '\\d{4}-\\d{2}-\\d{2}' }} />
+                        // )}
+                        // inputFormat="yyyy-MM-dd"
 
 
 
