@@ -6,8 +6,8 @@ A MERN-based web application designed for the purpose of monitoring a user's sle
 
 ### TODOs 📋 
 - [ ] Develop the user interface (UI) 🎨
-- [ ] Create APIs for persistent storage of user management data 🗄️
-- [ ] Implement User Authentication 🔒
+- [X] Create APIs for persistent storage of user management data 🗄️
+- [X] Implement User Authentication 🔒
 - [ ] Explore and add many more... 🔄
 
 ### Feedbacks 📣
